@@ -1,4 +1,4 @@
-```python
+
 import streamlit as st
 
 # MBTI와 애완동물 추천 매핑 딕셔너리 구성
