@@ -637,9 +637,9 @@ st.warning("⚠️ 본 정보는 참고용이며, 정확한 진단 및 치료는
 # 1차 카테고리 선택
 categories = list(set(disease_db.keys()))
 animal = st.selectbox("EMOJI_34 동물 종류를 선택하세요", sorted(categories))
-      "EMOJI_34 동물 종류를 선택하세요",
-      sorted(categories),
-     key='animal_type_selector_unique_id'
+    "EMOJI_34 동물 종류를 선택하세요",
+    sorted(categories),
+    key='animal_type_selector_unique_id'
 
 # --- 반려동물 건강 관리 가이드 섹션 (새로 추가) ---
 st.markdown("## ✨ 반려동물 건강 관리 가이드")
