@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 # -----------------------------
 # 동물 질병 데이터베이스 (수정 없음)
 # - 'icon': 동물을 대표하는 이모지 (혹은 질병 관련 이모지)
@@ -636,6 +637,9 @@ st.warning("⚠️ 본 정보는 참고용이며, 정확한 진단 및 치료는
 # 1차 카테고리 선택
 categories = list(set(disease_db.keys()))
 animal = st.selectbox("EMOJI_34 동물 종류를 선택하세요", sorted(categories))
+"EMOJI_34 동물 종류를 선택하세요",
+    sorted(categories),
+    key='animal_type_selector_unique_id'
 
 # --- 반려동물 건강 관리 가이드 섹션 (새로 추가) ---
 st.markdown("## ✨ 반려동물 건강 관리 가이드")
