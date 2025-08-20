@@ -636,10 +636,21 @@ st.warning("⚠️ 본 정보는 참고용이며, 정확한 진단 및 치료는
 
 # 1차 카테고리 선택
 categories = list(set(disease_db.keys()))
-animal = st.selectbox("EMOJI_34 동물 종류를 선택하세요", sorted(categories))
-    "EMOJI_34 동물 종류를 선택하세요",
-    sorted(categories),
-    key='animal_type_selector_unique_id'
+st.title("EMOJI_33 반려동물 질병 & 응급처치 도우미")
+st.warning("⚠️ 본 정보는 참고용이며, 정확한 진단 및 치료는 반드시 수의사에게 받아야 합니다.")
+st.markdown("---") # UI 구분선
+
+
+# ⭐ 중요: st.selectbox 위젯
+# 들여쓰기 조심해! animal = st.selectbox( 부터 모든 줄이 동일한 들여쓰기로 시작하고 있어.
+# key='animal_type_selector_unique_id' 부분을 추가해서 에러를 잡았어.
+animal = st.selectbox(
+    "EMOJI_34 동물 종류를 선택하세요", # 첫 번째 인자: 라벨
+    sorted(categories),               # 두 번째 인자: 드롭다운 목록 (정렬해서 보여줌)
+    key='animal_type_selector_unique_id' # 세 번째 인자: 고유 키 (중복 ID 에러 방지)
+)
+
+st.markdown("---")
 
 # --- 반려동물 건강 관리 가이드 섹션 (새로 추가) ---
 st.markdown("## ✨ 반려동물 건강 관리 가이드")
